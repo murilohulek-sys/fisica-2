@@ -4,6 +4,158 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tecnologia e Desafios dos Veículos Autônomos</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131c2e;
+      --accent-blue: #00d2ff;
+      --accent-purple: #7a5cff;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent-blue);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    /* Stack de Sensores */
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .sensor-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .sensor-card h3 {
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    /* Lista de Desafios */
+    .challenges-list {
+      list-style: none;
+    }
+
+    .challenges-list li {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-purple);
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .challenges-list strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Caixa de Arquitetura de Software */
+    .architecture-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pipeline-step {
+      flex: 1;
+      min-width: 180px;
+      background: rgba(0, 210, 255, 0.05);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .pipeline-step h4 {
+      color: var(--accent-blue);
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .pipeline-step p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
