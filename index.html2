@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnologia e Desafios dos Veículos Autônomos</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131c2e;
+      --accent-blue: #00d2ff;
+      --accent-purple: #7a5cff;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 30px 15px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent-blue);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    /* Stack de Sensores */
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .sensor-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .sensor-card h3 {
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    /* Lista de Desafios */
+    .challenges-list {
+      list-style: none;
+    }
+
+    .challenges-list li {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent-purple);
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .challenges-list strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Caixa de Arquitetura de Software */
+    .architecture-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pipeline-step {
+      flex: 1;
+      min-width: 180px;
+      background: rgba(0, 210, 255, 0.05);
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .pipeline-step h4 {
+      color: var(--accent-blue);
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .pipeline-step p {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Aprofundamento Técnico em Carros Autônomos</h1>
+      <p>Entenda a infraestrutura de hardware, os pipelines de software e os dilemas regulatórios que moldam a condução autônoma moderna.</p>
+    </header>
+
+    <!-- Fusão de Sensores -->
+    <section>
+      <h2> Stack de Hardware e Fusão de Sensores</h2>
+      <p>Nenhum sensor isolado é suficiente para uma condução segura. A automação depende da <strong>Fusão de Sensores</strong>, combinando as forças de cada tecnologia para sobrepor limitações físicas.</p>
+
+      <div class="sensor-grid">
+        <div class="sensor-card">
+          <h3>LiDAR (Light Detection and Ranging)</h3>
+          <p>Emite pulsos de laser invisíveis para criar uma nuvem de pontos 3D ultraprecisa do ambiente. Excelente para calcular distâncias exatas, independente da iluminação.</p>
+        </div>
+        <div class="sensor-card">
+          <h3>Câmeras HD & Visão Computacional</h3>
+          <p>Capturam cores, texturas e informações visuais. São fundamentais para a leitura de placas de trânsito, sinalização horizontal e identificação de luzes de freio.</p>
+        </div>
+        <div class="sensor-card">
+          <h3>Radares de Onda Milimétrica</h3>
+          <p>Usa ondas de rádio para detectar a velocidade e a distância de objetos. É o sensor mais robusto contra condições climáticas adversas, como chuva intensa e neblina.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline de Software -->
+    <section>
+      <h2> Arquitetura e Pipeline de Decisão</h2>
+      <div class="architecture-box">
+        <p>A tomada de decisão em tempo real envolve um pipeline contínuo de dados que opera em milissegundos:</p>
+        
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <h4>1. Percepção</h4>
+            <p>Identifica objetos, pedestres e o traçado da via através da fusão dos sensores.</p>
+          </div>
+          <div class="pipeline-step">
+            <h4>2. Localização</h4>
+            <p>Determina a posição exata do veículo na via cruzando dados do GPS com mapas HD.</p>
+          </div>
+          <div class="pipeline-step">
+            <h4>3. Predição</h4>
+            <p>Calcula as trajetórias prováveis de todos os objetos ao redor nos próximos segundos.</p>
+          </div>
+          <div class="pipeline-step">
+            <h4>4. Planejamento</h4>
+            <p>Define a rota segura, velocidade, mudanças de faixa e manobras do veículo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desafios Globais -->
+    <section>
+      <h2> Principais Desafios para a Adocão em Massa</h2>
+      <ul class="challenges-list">
+        <li>
+          <strong>Casos Limite (Edge Cases)</strong>
+          Cenários atípicos e imprevisíveis — como tempestades extremas, construções sem sinalização padrão ou comportamentos imprevisíveis de pedestres — são difíceis de prever no treinamento dos modelos de IA.
+        </li>
+        <li>
+          <strong>Dilemas Éticos e Responsabilidade Civil</strong>
+          Determinar a responsabilidade legal em acidentes (desenvolvedores do sistema, fabricantes ou proprietários) e resolver algoritmicamente dilemas éticos inadiáveis de colisão.
+        </li>
+        <li>
+          <strong>Custo de Infraestrutura e Escalabilidade</strong>
+          A implantação em larga escala exige mapeamento rodoviário contínuo em alta definição (HD Maps), conectividade 5G constante e redução do custo dos sistemas LiDAR.
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Desenvolvido para estudo de arquiteturas de mobilidade autônoma.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
